@@ -29,12 +29,13 @@ public class StudentController {
         }
 
         //updating the student information
-//        @PutMapping("/put_student")
-//        public String putStudent(@RequestParam("q") int admNo,@RequestParam("q") String name,@RequestParam("q") int age,@RequestParam("q")String state)
-//        {
-//            db.put(admNo,);
-//            return "updated successfully";
-//        }
+        @PutMapping("/put_student")
+        public String putStudent(@RequestParam("q") int admNo,@RequestBody Student student)
+        {
+
+            db.put(admNo,student);
+            return "updated successfully";
+        }
         //deleting the student information
         @DeleteMapping("/delete_student")
         public String deleteStudent(@RequestParam("q")int admNo)
